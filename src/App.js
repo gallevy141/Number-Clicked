@@ -21,8 +21,10 @@ class App extends React.Component {
     return (
       <div>
         <NumberGrid onClick={this.handleClick} />
-        <div style={style}>
-          {this.state.clickedNumber ? `You've clicked ${this.state.clickedNumber}` : ""}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={style}>
+            {this.state.clickedNumber ? `You've clicked ${this.state.clickedNumber}` : ""}
+          </div>
         </div>
       </div>
     )
