@@ -1,5 +1,4 @@
 import React from 'react'
-import './NumberButton.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class NumberButton extends React.Component {
