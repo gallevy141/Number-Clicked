@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import NumberGrid from './components/NumberGrid'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { clickedNumber: null }
+  }
+
+  handleClick = (number) => {
+    this.setState({ clickedNumber: number })
+  };
+
+  render() {
+    const style = {
+      backgroundColor: 'lightblue',
+      color: 'darkblue',
+      padding: '10px',
+      margin: '10px'
+    }
+    return (
+      <div>
+        <NumberGrid onClick={this.handleClick} />
+        <div style={style}>
+          {this.state.clickedNumber ? `You've clicked ${this.state.clickedNumber}` : ""}
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
