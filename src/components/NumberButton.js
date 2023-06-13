@@ -1,26 +1,34 @@
 import React from 'react'
+import './NumberButton.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class NumberButton extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { isClicked: false }
-  }
-
   handleClick = () => {
-    this.setState({ isClicked: true })
     this.props.onClick(this.props.number)
   };
 
   render() {
+    const isClicked = this.props.clickedNumber === this.props.number;
     const style = {
-      color: this.props.color,
+      color: isClicked ? "white" : this.props.color,
       borderColor: this.props.color,
-      backgroundColor: this.state.isClicked ? 'green' : 'white',
-    }
+      backgroundColor: isClicked ? this.props.color : "white",
+      borderRadius: "15px",
+      width: "120px",
+      height: "60px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    };
+
     return (
-      <button style={style} onClick={this.handleClick}>
+      <div 
+        className="btn m-2" 
+        style={style} 
+        onClick={this.handleClick}
+      >
         {this.props.number}
-      </button>
+      </div>
     )
   }
 }
