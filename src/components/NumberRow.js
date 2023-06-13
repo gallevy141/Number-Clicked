@@ -1,7 +1,6 @@
 import React from 'react'
 import NumberButton from './NumberButton'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './NumberRow.css'
 
 class NumberRow extends React.Component {
   render() {
