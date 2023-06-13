@@ -1,5 +1,4 @@
 import React from 'react'
-import './NumberButton.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class NumberButton extends React.Component {
@@ -8,27 +7,20 @@ class NumberButton extends React.Component {
   };
 
   render() {
-    const isClicked = this.props.clickedNumber === this.props.number;
-    const style = {
-      color: isClicked ? "white" : this.props.color,
-      borderColor: this.props.color,
-      backgroundColor: isClicked ? this.props.color : "white",
-      borderRadius: "15px",
-      width: "120px",
-      height: "60px",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    };
+    let buttonStyle = "btn m-1 "
+    if (this.props.clickedNumber === this.props.number) {
+      buttonStyle += this.props.color === "red" ? "btn-danger" : "btn-success";
+    } else {
+      buttonStyle += this.props.color === "red" ? "btn-outline-danger" : "btn-outline-success";
+    }
 
     return (
-      <div 
-        className="btn m-2" 
-        style={style} 
+      <button 
+        className={buttonStyle} 
         onClick={this.handleClick}
       >
         {this.props.number}
-      </div>
+      </button>
     )
   }
 }
