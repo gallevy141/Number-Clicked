@@ -10,6 +10,7 @@ class NumberDisplay extends React.Component {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      textAlign: "center",
     }
 
     return (
