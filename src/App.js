@@ -12,19 +12,11 @@ class App extends React.Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: 'lightblue',
-      color: 'darkblue',
-      padding: '10px',
-      margin: '10px'
-    }
     return (
-      <div>
+      <div className="container text-center">
         <NumberGrid onClick={this.handleClick} />
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={style}>
-            {this.state.clickedNumber ? `You've clicked ${this.state.clickedNumber}` : ""}
-          </div>
+        <div className="bg-light text-dark m-2 p-2">
+          {this.state.clickedNumber ? `You've clicked ${this.state.clickedNumber}` : ""}
         </div>
       </div>
     )

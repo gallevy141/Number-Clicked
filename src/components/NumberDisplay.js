@@ -3,18 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 class NumberDisplay extends React.Component {
   render() {
-    const style = {
-      backgroundColor: "#ADD8E6",
-      color: "#00008B",
-      height: "60px",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
-    }
-
     return (
-      <div className="m-2" style={style}>
+      <div className="m-2 bg-info text-dark d-flex align-items-center justify-content-center">
         {this.props.displayText}
       </div>
     )
