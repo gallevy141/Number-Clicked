@@ -1,29 +1,23 @@
 import React from 'react'
 import NumberButton from './NumberButton'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './NumberRow.css'
 
 class NumberRow extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { clickedNumber: null }
-  }
-
-  handleClick = (number) => {
-    this.setState({ clickedNumber: number })
-    this.props.onClick(number)
-  };
-
   render() {
     return (
-      <div>
+      <div className="d-flex justify-content-around mb-4 border-bottom pb-2">
         <NumberButton 
           number={this.props.number1} 
           color="red" 
-          onClick={this.handleClick}
+          onClick={this.props.onClick} 
+          clickedNumber={this.props.clickedNumber}
         />
         <NumberButton 
           number={this.props.number2} 
           color="green" 
-          onClick={this.handleClick}
+          onClick={this.props.onClick} 
+          clickedNumber={this.props.clickedNumber}
         />
       </div>
     )
