@@ -1,15 +1,19 @@
-import React from 'react'
+import React from 'react' 
 import NumberRow from './NumberRow'
 
 class NumberGrid extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { clickedNumber: null }
-  }
 
+  // The constructor method that initializes the component's state.
+  // props is passed to both constructor and super to give access to this.props in the constructor.
+  constructor(props) {
+    super(props) 
+    this.state = { clickedNumber: null } 
+  }
+ 
+  // Updates state and invokes the onClick prop function with the clicked number
   handleClick = (number) => {
-    this.setState({ clickedNumber: number })
-    this.props.onClick(number)
+    this.setState({ clickedNumber: number }) 
+    this.props.onClick(number) 
   }
 
   render() {
